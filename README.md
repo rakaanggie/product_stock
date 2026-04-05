@@ -24,6 +24,13 @@ Check installed version:
 node -v
 ```
 
+Install Node.js 18 on Amazon Linux 2023:
+
+```
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo dnf install nodejs -y
+```
+
 ---
 
 ### 2. npm
