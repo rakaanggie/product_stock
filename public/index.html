@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Stock</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Product Stock Management</h1>
+
+<div id="instance"></div>
+
+<h2>Add Product</h2>
+
+<input id="name" placeholder="Product name">
+
+<select id="category">
+<option>clothes</option>
+<option>shoes</option>
+<option>jewelery</option>
+<option>skincare</option>
+<option>haircare</option>
+</select>
+
+<input id="stock" type="number" placeholder="Stock">
+
+<button onclick="addProduct()">Add Product</button>
+
+<h2>Product List</h2>
+
+<table id="productTable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Category</th>
+<th>Stock</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+<script src="app.js"></script>
+
+</body>
+</html>

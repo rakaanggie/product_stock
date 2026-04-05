@@ -9,13 +9,13 @@ const productRoutes = require('./routes/products');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
-app.use('/products', productRoutes);
+app.use('/api/products', productRoutes);
 
-app.get('/', (req, res) => {
+app.get('/api/instance', (req, res) => {
     res.json({
-        message: "NodeJS DynamoDB CRUD API",
-        instance: os.hostname()
+        hostname: os.hostname()
     });
 });
 
