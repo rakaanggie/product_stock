@@ -105,7 +105,7 @@ npm install
 Start the server:
 
 ```
-node app.js
+npm start
 ```
 
 The server will start on:
@@ -135,4 +135,32 @@ Example display:
 
 ```
 Served by instance: ip-10-0-1-24
+```
+
+# Run With User Data
+```
+#!/bin/bash
+
+echo "Step 1 - Install Git & NodeJS 18"
+dnf update -y
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo dnf install git nodejs -y
+
+echo "Step 2 - Clone Repository"
+mkdir /home/ec2-user/product_stock
+git clone https://github.com/rakaanggie/product_stock.git /home/ec2-user/product_stock
+
+echo "Step 3 - Add .env"
+cat << EOF > /home/ec2-user/product_stock/.env
+PORT=3000
+AWS_ACCESS_KEY_ID=<Access key here>
+AWS_SECRET_ACCESS_KEY=<Secret access key here>
+AWS_REGION=us-east-1
+DYNAMODB_TABLE=product-stock
+EOF
+cat /home/ec2-user/product_stock/.env
+
+echo "Step 4 - Install and Run Apps"
+npm install --prefix /home/ec2-user/product_stock
+npm start --prefix /home/ec2-user/product_stock
 ```
