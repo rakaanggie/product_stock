@@ -129,19 +129,3 @@ Example display:
 ```
 Served by instance: ip-10-0-1-24
 ```
-
-This is useful when testing **AWS Load Balancer and Auto Scaling**.
-
----
-
-# API Endpoint
-
-Base API path:
-
-```
-/api/products
-```
-
-
-haircare
-```
